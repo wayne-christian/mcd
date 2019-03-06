@@ -1,0 +1,513 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Week 8: DATABASE SYSTEMS CMP2060M</title>
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/night.css">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+<link rel="stylesheet" href="css/custom.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section data-background-transition="convex" data-background="#333333">
+      <h2 >Hello</h2>
+      <p style="color:#F8AA00">(DATABASE SYSTEMS CMP2060M)</p>
+    </section>
+    <section data-background-transition="convex" data-background-video="assets/week7/rainingcode.mp4" data-background-video-loop="loop">
+      <h3 >Wayne Christian</h3>
+      <p style="color:#F8AA00">Designer, Developer, Director & Senior Lecturer</p>
+    </section>
+    <section data-menu-title="intro1" data-background="#3f3f3f">
+      <p>A <strong>SQL query </strong>walks into a bar and sees two tables. <br>
+        He walks up to them and asks, "Can I join you?"</p>
+    </section>
+    <section data-background="assets/week7/RightCloud-10.jpg" data-background-size="cover" data-background-color="#fff">
+      <h2><span class="dark-back">Standard Query Language Part 2</span></h2>
+      <p><span class="dark-back">Data Manipulation Language (DML)</span></p>
+    </section>
+    <section data-background-transition="convex" data-background="assets/week8/cow-dancing.gif" data-background-size="300px" >
+      <h3>Recap</h3>
+    </section>
+    <section data-background-transition="convex" data-background="">
+      <p >Last week we was focused on SQL Data Definition Language (DDL)</p>
+      <p class="fragment tight bullet" style="">Create Databases</p>
+      <p class="fragment tight bullet" style="">Create / Alter Tables</p>
+      <p class="fragment tight bullet" style="">Create / Alter Data Types</p>
+      <p class="fragment tight bullet" style="">Create / Alter Constraints</p>
+      <p class="fragment tight bullet" style="">All about the creation and structure of databases/tables/constraints, <strong>Not </strong>about the manipulation of the actual data in database</p>
+    </section>
+    <section data-background-transition="convex" data-background="">
+      <h3>This week’s focus is on manipulating data stored in the database</h3>
+      <p class="fragment">easy!</p>
+    </section>
+    <section data-background-transition="convex" data-background="">
+      <h3>Recap</h3>
+      <p >BASIC QUERIES</p>
+    </section>
+    <section data-background-transition="convex" data-background-color="#3f3f3f">
+      <p class="small" >Create a DB</p>
+      <pre><code style="font-size:80%" data-trim data-noescape>      
+CREATE DATABASE accounts
+    </code></pre>
+    </section>
+    <section data-background-transition="convex" data-background="assets/week9/vdance1.gif" data-background-size="700px" > </section>
+    <section data-background-transition="convex" data-background-color="#3f3f3f">
+      <p class="small" >Create Branch Table</p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+CREATE TABLE branch (
+B_name VARCHAR(30) NOT NULL, 
+Address VARCHAR(30) NOT NULL,
+City VARCHAR(30) NOT NULL,
+Assets DECIMAL(10, 2) NOT NULL);
+    </code></pre>
+      <p class="small" >Some added comma's B_name VARCHAR(30)<strong>,</strong> NOT NULL</p>
+    </section>
+    <section data-background-transition="convex" data-background="assets/week9/vdance2.gif" data-background-size="700px" > </section>
+    <section data-background-transition="convex"  data-background-color="#3f3f3f">
+      <p class="small" >Create Customers Table</p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+CREATE TABLE customers (
+c_name VARCHAR(30) NOT NULL, 
+street VARCHAR(30) NOT NULL,
+City VARCHAR(30) NOT NULL);
+    </code></pre>
+    </section>
+    <section data-background-transition="convex" data-background="assets/week9/vdance4.gif" data-background-size="700px" > </section>
+    <section data-background-transition="convex" data-background-color="#3f3f3f" >
+      <p >Write the SQL statement ALTER command for:</p>
+      <p>1 <strong>Adding</strong> or <strong>dropping</strong> a column (attributes) in the branch table</p>
+      <p>2 Changing a column <strong>definition</strong> in the customers table</p>
+      <br>
+      <pre><code style="font-size:80%" data-trim data-noescape>ALTER TABLE customers MODIFY c_name CHAR(100);</code></pre>
+    </section>
+    <section data-background-transition="convex" data-background="assets/week9/vdance3.gif" data-background-size="700px" > </section>
+    <section data-background-transition="convex" >
+      <h3 >Adding or dropping table constraints in the deposit table</h3>
+    </section>
+    <section data-background-transition="convex" data-background="assets/week9/faildance.gif" data-background-size="700px" > </section>
+    <section data-background-transition="convex" data-background-color="#3f3f3f">
+      <p class="small" >Alter Customers Table</p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+ALTER TABLE Customers  
+<mark>ADD CONSTRAINT fk_Acc_number </mark>   
+FOREIGN KEY (Acc_number)    
+REFERENCES borrow (Acc_number);
+ON UPDATE CASCADE 
+ON DELETE CASCADE
+    </code></pre>
+      <p class="small">if you do not explicitly name your constraint phpmyadmin will!</p>
+    </section>
+    <section data-background-transition="convex" data-background-video="assets/week9/facepalm2.mp4" > </section>
+    <section data-background-transition="convex" data-background-color="#3f3f3f">
+      <p class="small" >Drop FK</p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+ALTER TABLE Customers
+DROP FOREIGN KEY <mark>fk_Acc_number</mark>
+    </code></pre>
+    </section>
+    <section data-background-transition="convex" data-background="">
+      <h3>Today</h3>
+    </section>
+    <section data-background-transition="convex" data-background-video="assets/week8/sql.mp4" > </section>
+    <section data-background-transition="convex" data-background="">
+      <h3>Today</h3>
+      <p >Standard Query Language Part 2 – Data Manipulation Language (DML)</p>
+      <p class="tight bullet" style="">Data Manipulation Language overview</p>
+      <p class="tight bullet" style="">SQL SELECT</p>
+      <p class="tight bullet" style="">Conditional Clauses</p>
+      <p class="tight bullet" style="">Operations/ Functions / Grouping</p>
+      <p class="tight bullet" style="">SQL INSERT / UPDATE / DELETE</p>
+      <p class="tight bullet" style="">Summary</p>
+    </section>
+    <section >
+      <h3>Where we are</h3>
+      <p class=" bullet">Week 7: Intro to Cloud Storage (SQL-as-a-service)</p>
+      <p class="bullet">Week 8: Standard Query Language - Data Definition Language (create database, tables, column etc)</p>
+      <p class=" bullet red">Week 9: Standard Query Language - Data Manipulation Language (insert, select, delete etc. with JOIN, UNION and other relational queries)</p>
+    </section>
+    <section>
+      <h3><span class="dark-back">MTA – Database Fundamentals Exam</span></h3>
+      <p>Revision linked to this weeks lecture and workshop, content below available on BB under the MTA Section</p>
+      <p class="bullet small">Study Textbook Lesson 3</p>
+      <p class="bullet small">Study Guide Chapter 3</p>
+      <img src="assets/week9/mta1.jpg"/> </section>
+    <section data-background-transition="convex"  data-background-size="cover" >
+      <h3>Assessment 2</h3>
+      <p>In short: You must implement your final database solution, via an SQL script, using the MySQL database platform and associated
+        tooling. </p>
+      <p>you will develop a fully-functional SQL script file with the .sql extension. Upon execution,
+        the .sql script must create your database structure using MySQL DDL statements with all required tables and integrity
+        constraints</p>
+    </section>
+    <section data-background="assets/week7/RightCloud-10.jpg" data-background-size="cover" data-background-color="#fff">
+      <h2><span class="dark-back">Data Manipulation Language (DML)</span></h2>
+    </section>
+    <section>
+      <p>Data Manipulation Language (DML) is the language element of SQL which allows you to use core statements: </p>
+      <br>
+      <p class=" fragment"><strong>SELECT</strong>:  Retrieves rows from the database and enables the selection of one or many rows or columns from one or many tables in the database;</p>
+      <p class=" fragment"><strong>INSERT:</strong> Adds one or more new rows to a table;</p>
+      <p class=" fragment"><strong>UPDATE:</strong> Changes existing data in one or more columns in a table;</p>
+      <p class=" fragment"><strong>DELETE:</strong> Removes rows from a table. </p>
+    </section>
+    <section data-background-transition="convex" data-background-color="#3f3f3f" >
+      <p class="" >SELECT syntax</p>
+      <pre><code style="font-size: 90%" data-trim data-noescape>    
+SELECT [column(s)] FROM [table list] WHERE [condition]
+    </code></pre>
+      <p class="tight small"> <strong>[column(s)]</strong> is a list of column names whose values are to be retrieved by the query, separated by commas<br>
+        <strong>[table list]</strong> is a list of the table names required to  process the query<br>
+        <strong>[condition]</strong> is a conditional (Boolean) expression that identifies the condition to be retrieved by the query (optional) </p>
+    </section>
+    <section data-background-transition="convex" data-background-color="#3f3f3f">
+      <p class="" >SELECT (from adventure works DB)</p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+SELECT title, hiredate FROM employee  
+WHERE hiredate >= '2000-01-0’ 
+    </code></pre>
+      <p class="small tight">Output</p>
+      <br>
+      <img style="background-color: #eee" src="assets/week9/select1.png"/> </section>
+    <section data-background-transition="convex" data-background-color="#3f3f3f">
+      <p class="" >SELECT ‘combining conditions’</p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+SELECT title , hiredate, gender FROM employee 
+WHERE hiredate >= '2000-01-0’ <mark>AND</mark> gender = ‘F
+    </code></pre>
+      <p class="small tight">Output</p>
+      <br>
+      <img style="background-color: #eee" src="assets/week9/select2.png"/> </section>
+    <section data-background-transition="convex"  data-background-color="#3f3f3f">
+      <p class="" >SELECT ‘BETWEEN’ clause<br>
+        Retrieve records that satisfy a ‘range’ condition: </p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+SELECT title , hiredate FROM employee 
+WHERE hiredate <mark>BETWEEN</mark> ‘1996-01-01’ <mark>AND</mark> '2000-01-01
+    </code></pre>
+      <p class="small tight">Output</p>
+      <br>
+      <img style="background-color: #eee" src="assets/week9/select3.png"/> </section>
+    <section data-background-transition="convex" data-background-color="#3f3f3f">
+      <p class="" >SELECT ‘NOT’ clause</p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+SELECT * FROM department WHERE <mark>NOT</mark> name='Sales' 
+
+    </code></pre>
+      <p class="small tight">Output</p>
+      <br>
+      <img style="background-color: #eee" src="assets/week9/select4.png"/> </section>
+    <section data-background-transition="convex" data-background-color="#3f3f3f">
+      <p class="" >SELECT *</p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+SELECT * FROM employee
+    </code></pre>
+      <p class="bullet small tight">To retrieve all column values of the selected rows, a * stands for all the columns</p>
+      <p class="bullet small tight">Above query would produce a result that displays all columns / rows of data in the employee table</p>
+    </section>
+    <section data-background-transition="convex" data-background-color="#3f3f3f">
+      <p class="" >SELECT *</p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+SELECT * FROM employee
+    </code></pre>
+      <p class="bullet small tight">To retrieve all column values of the selected rows, a * stands for all the columns</p>
+      <p class="bullet small tight">Above query would produce a result that displays all columns / rows of data in the employee table</p>
+    </section>
+    <section data-background-transition="convex" data-background="assets/week8/foreignkey.gif" data-background-size="cover" >
+      <h2><span class="dark-back">Demo 1: SELECT queries on employee table in adventureworks database </span></h2>
+    </section>
+    <section data-menu-title="example 1" data-background-iframe="http://35.234.96.182/phpmyadmin/db_structure.php?server=1&db=adventureworks" data-background-interactive> </section>
+    <section data-background="assets/week7/RightCloud-10.jpg" data-background-size="cover" data-background-color="#fff">
+      <h2><span class="dark-back">SELECT operations, functions, and grouping </span></h2>
+    </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >SELECT - Arithmetic Operations </p>
+      <p class="small">The standard arithmetic operators (+, -, *, /) can be applied to numeric values
+        Example: Get the total value of sales from Sales Personnel this year, and compare to total for last year </p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+SELECT SalesPersonID ,salesYTD – SalesLastYear FROM salesperson
+
+    </code></pre>
+      <p class="small tight">Output</p>
+      <br>
+      <img style="background-color: #eee" src="assets/week9/select5.png"/> </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >SELECT - Aggregate Functions</p>
+      <p class="small">Includes <strong>COUNT, SUM, MAX, MIN</strong>, and <strong>AVG</strong><br>
+        <strong>Example:</strong> Find the minimum, maximum, and average sick hours among all employees: </p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+SELECT MIN(SickLeaveHours), MAX(SickLeaveHours), AVG(SickLeaveHours) FROM EMPLOYEE
+ </code></pre>
+    </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >SELECT - Aggregate Functions</p>
+      <p class="small">Includes <strong>COUNT, SUM, MAX, MIN</strong>, and <strong>AVG</strong><br>
+        <strong>Example:</strong> Retrieve the total number of employees in the company: </p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+SELECT COUNT(*) FROM EMPLOYEE
+ </code></pre>
+    </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >SELECT - Aggregate Functions</p>
+      <p class="small">You can use aggregate and arithmetic functions/operations together<br>
+        <strong>Example:</strong> Get the value of all current bonuses for Sales Personnel and show the impact of a 10% bonus increase </p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+SELECT SUM(bonus), SUM(bonus*1.1) FROM salesperson
+ </code></pre>
+      <p class="small tight">Output</p>
+      <br>
+      <img style="background-color: #eee" src="assets/week9/select7.png"/> </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >SELECT - Grouping</p>
+      <p class="small bullet">In many cases, you will want to apply aggregate functions to sub-groups of records in a table.</p>
+      <p class="small bullet">Each sub-group of records consists of the set of records that have the same value for the grouping attribute(s)</p>
+      <p class="small bullet">The function is applied to each subgroup independently</p>
+      <p class="small bullet">SQL has a GROUP BY clause for specifying the grouping attributes</p>
+      <p class="small bullet">The attributes for Group By must also appear in the SELECT clause at the beginning</p>
+    </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >SELECT - Grouping</p>
+      <p class="small"><strong>Example:</strong> For each Sales employee, retrieve the number of orders they have achieved, and the average value of their orders: </p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+Select SalesPersonID, COUNT(*), AVG(TotalDue) FROM salesorderheader <mark>GROUP BY</mark> SalesPersonID
+ </code></pre>
+      <p class="small tight">The sales order records are divided into groups<br>
+        Each group having the same value for the grouping column/attribute. </p>
+    </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >SELECT - Grouping</p>
+      <p class="bullet" >The <strong>COUNT</strong> and <strong>AVG</strong> functions are applied to each such group of records separately</p>
+      <p class="bullet" >The SELECT-clause includes only the grouping attribute and the functions to be applied on each group of records</p>
+    </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >SELECT - Grouping</p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+Select SalesPersonID, COUNT(*), AVG(TotalDue) FROM salesorderheader <mark>GROUP BY</mark> SalesPersonID
+ </code></pre>
+      <img style="background-color: #eee" src="assets/week9/select8.png"/> </section>
+      
+      
+      <section>
+		  <h2>Interlude!</h2>
+		  <p>breather (time depending)</p>
+	  </section>
+	  <section data-background-transition="convex" data-background-video="assets/week9/gates.mp4" > </section>
+	  
+    <section data-background-color="#3f3f3f">
+      <p class="" >SELECT – JOIN clause</p>
+      <p class="small">The <strong>JOIN</strong> clause allows you to combine related data from multiple table sources: </p>
+      <p class="bullet small"><strong>INNER JOINS</strong> allow you to match related records taken from different source tables</p>
+      <p class="bullet small"><strong>OUTER LEFT</strong> or <strong>RIGHT JOINS</strong> can include records from one or both tables you are querying which do not have any corresponding record(s) to be found in the other table </p>
+    </section>
+    <section data-background-transition="convex" data-background="assets/week9/venn.png" data-background-size="contain" data-background-color="#fff" > </section>
+    <section data-background-transition="convex" data-background="assets/week9/venn2.jpg" data-background-size="contain" data-background-color="#fff" > </section>
+    <section data-menu-title="example 1" data-background-iframe="https://sql-joins.leopard.in.ua/" data-background-interactive> </section>
+    <section data-background-transition="convex" data-background="assets/week8/foreignkey.gif" data-background-size="cover" >
+      <h3><span class="dark-back">Demo 2: SELECT queries for operations, functions, and grouping </span></h3>
+    </section>
+    <section data-background="assets/week7/RightCloud-10.jpg" data-background-size="cover" data-background-color="#fff">
+      <h3><span class="dark-back">SQL INSERT / UPDATE / DELETE </span></h3>
+    </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >INSERT (testdb database used)</p>
+      <p>The Insert statement is used to insert quantities (rows) of data into your database.<br>
+        There are three things you need to ensure are identified in your statement to form a proper INSERT query:</p>
+      <p class="bullet tight small">Table name where data will be inserted</p>
+      <p class="bullet tight small">Column(s) to insert data into</p>
+      <p class="bullet tight small">Value(s) for specified column(s) </p>
+    </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >INSERT (testdb database used)</p>
+      <p>The Insert statement is used to insert quantities (rows) of data into your database
+        There are three things you need to ensure are identified in your statement to form a proper INSERT query:</p>
+      <p class="bullet tight small">Table name where data will be inserted</p>
+      <p class="bullet tight small">Column(s) to insert data into</p>
+      <p class="bullet tight small">Value(s) for specified column(s) </p>
+    </section>
+    <section data-background-transition="convex" data-background-color="#3f3f3f" >
+      <p class="" >INSERT syntax</p>
+      <pre><code style="font-size: 90%" data-trim data-noescape>    
+INSERT INTO [table] [column list] VALUES [value list]  
+
+    </code></pre>
+      <p class="tight"><strong>[table]</strong> the table name to insert data<br>
+        <strong>[column list] </strong>is a list of comma separated column names for which data is to be inserted<br>
+        <strong>[value list] </strong>is a list of comma separated values for each column </p>
+    </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >INSERT example (testdb department table)</p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+INSERT INTO department (DNUMBER, DESCRIPTION) VALUES 
+('1', 'Human Resources'),
+('2', 'Engineering'),
+('3', 'Estates'),
+('4','Enterprise'),
+('5','Human Resources');
+
+ </code></pre>
+      <p class="small">Output</p>
+      <br>
+      <img style="background-color: #eee" src="assets/week9/select9.png"/> </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >INSERT example (testdb department table)</p>
+      <p class="small">Insert 1 row</p>
+      <pre><code style="font-size:80%" data-trim data-noescape style="font-size: 80%">    
+INSERT INTO employee (FNAME, LNAME, SSN, BDATE, ADDRESS, GENDER, SALARY, DNO)    
+VALUES ('Maddog','McGlinchey','abcdefg','1985-10-10','35 High St','m' ,'45000','2')
+ </code></pre>
+      <p class="small">Output</p>
+      <br>
+      <img style="background-color: #eee" src="assets/week9/select10.png"/> </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >INSERT example (testdb department table)</p>
+      <p class="small">Insert 3 rows</p>
+      <pre><code style="font-size:80%" data-trim data-noescape style="font-size: 80%">    
+INSERT  INTO employee (FNAME, LNAME, SSN, BDATE, ADDRESS, GENDER, SALARY, DNO)
+VALUES ('Jimmy'  ,'McTavish','123456','1990-10-10','90 Bellgrove St','m','35000','2’),
+('Pat','Riggerson','abs1234','1989-05-05','7 Alexander St','f','15000','2’),
+( 'Wilma','Flintstone','xya1234'   ,'1950-06-15','100 Monks Rd','f','45000','5');
+
+ </code></pre>
+      <p class="small">Output</p>
+      <br>
+      <img style="background-color: #eee" src="assets/week9/select10.png"/> </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >UPDATE (testdb database used)</p>
+      <p>The <strong>UPDATE</strong> clause allows you to modify the data which is stored in tables using column and data value attributes</p>
+      <p class="tight">There are three things you need to ensure are identified in your UPDATE statement:</p><br>
+      <p class="tight bullet small">[table] the table name where data is to be updated</p>
+      <p class="tight bullet small">[column / value list] is a list of comma separated column names and values containing the update data</p>
+      <p class="tight bullet small">[condition] is a conditional (Boolean) expression that identifies the condition to be updated</p>
+    </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >Update Syntax</p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+UPDATE [table] SET [column / value list]  
+WHERE [condition];
+ </code></pre>
+      <p class="red"><strong>If no condition is set, then then all records will be updated!</strong> </p>
+    </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >Update Syntax</p>
+      <p class="small">This statement will modify the current primary key DNUMBER value of 2 to 6.<br>
+        What will happen in employee table if above statement is run? </p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+UPDATE department SET DNUMBER = '6' WHERE DNUMBER = '2
+ </code></pre>
+      <p class="small">Output</p>
+      <br>
+      <img style="background-color: #eee" src="assets/week9/update1.png"/> </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >DELETE (testdb database used)</p>
+      <p>The Delete statement is used to remove one or more rows in a specified table.<br>
+        There are two things you need to ensure are identified in to form a proper DELETE statement:</p>
+      <p class="tight bullet small">Table where data will be deleted;</p>
+      <p class="tight bullet small">Condition on which data row(s) will be deleted;</p>
+    </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >DELETE (testdb database used)</p>
+      <p>The Delete statement is used to remove one or more rows in a specified table.<br>
+        There are two things you need to ensure are identified in to form a proper DELETE statement:</p>
+      <p class="tight bullet small">Table where data will be deleted;</p>
+      <p class="tight bullet small">Condition on which data row(s) will be deleted;</p>
+    </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >DELETE Syntax</p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+DELETE FROM [table] WHERE [condition];
+ </code></pre>
+      <p class="red"><strong>If no condition is set, then then all records will be DELETED!</strong> </p>
+    </section>
+    <section data-background-transition="convex" data-background-video="assets/week9/scream.mp4" > </section>
+    <section data-background-color="#3f3f3f">
+      <p class="" >DELETE Syntax</p>
+      <p>Remove 1 row from the department table</p>
+      <pre><code style="font-size:80%" data-trim data-noescape>    
+DELETE FROM department WHERE DNUMBER = '2'
+ </code></pre>
+      <p class="small">Output</p>
+      <br>
+      <img style="background-color: #eee" src="assets/week9/delete1.png"/> </section>
+    <section data-background-transition="convex"  data-background-color="#ffffff" >
+      <h3><span class="dark-back">Remember – Referential Constraints!</span></h3>
+      <img style="background-color: #eee" src="assets/week8/foreignkey_issue.jpg"/> </section>
+    <section data-background-color="#3f3f3f">
+     <pre><code style="font-size:80%" data-trim data-noescape>    
+DELETE FROM department WHERE DNUMBER = '2'
+ </code></pre>
+      <p> The above statement will remove the DNUMBER primary key value of 2 from the department table, which will impact the foreign key linked to it in the employee table</p>
+       <p>Currently, there are three employee records in the employee table who belong to department number 2<br>
+       <strong> What will happen if the above statement is run?</strong> </p>
+    </section>
+    
+    
+    <section data-background-color="#3f3f3f">
+     <pre><code style="font-size:80%" data-trim data-noescape>    
+CONSTRAINT fk_department_no FOREIGN KEY (DNO) REFERENCES DEPARTMENT (DNUMBER) 
+<mark>ON UPDATE CASCADE ON DELETE CASCADE</mark>); 
+ </code></pre>
+      <p class="bullet small"> The above statement will remove the DNUMBER primary key value of 2 from the department table, which will impact the foreign key linked to it in the employee table</p>
+      <p class="bullet  small">By using ON UPDATE CASCADE and ON DELETE CASCADE when the DNO foreign key was created, it means modifications/deletions to DNUMBER in the department table will also be reflected in the employee table</p>
+<p class="bullet small">ON UPDATE will change all rows in employee table with a DNO value of 2 to the updated value of 6</p>
+<p class="bullet small">ON DELETE will simply remove all rows in the employee table with a DNO value of 2</p>
+
+    </section>
+    
+       <section>
+
+      <p class="">TRUNCATE </p>
+      <p class="tight">The Truncate statement is used to remove all rows of data from a table, but leaves the table structure intact:
+</p>
+ <pre><code style="font-size:80%" data-trim data-noescape>    
+TRUNCATE TABLE employee; 
+ </code></pre>
+		   <p>Handy!</p>
+    </section>
+     <section data-background-transition="convex" data-background="assets/week8/foreignkey.gif" data-background-size="cover" >
+      <h2><span class="dark-back">Demo 3: INSERT / UPDATE / DELETE statements on testdb database
+</span></h2>
+    </section>  
+    
+      <section data-background-transition="convex" data-background="assets/week8/book.jpg" data-background-size="400px" >
+      <h3>Reading (Chapter 4)</h3>
+    </section> 
+        <section data-background="assets/week7/RightCloud-10.jpg" data-background-size="cover" data-background-color="#fff">
+      <h2><span class="dark-back">Workshop</span></h2>
+      <p><span class="dark-back">Doing this!</span></p>
+    </section>
+    
+    <section data-background-transition="convex" data-background-video="assets/week8/sql.mp4" > </section>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="lib/js/head.min.js"></script> 
+<script src="js/reveal.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="https://code.highcharts.com/highcharts.js"></script> 
+<script src="https://code.highcharts.com/highcharts-more.js"></script> 
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script> 
+<script src="js/themes/mypbtheme.js"></script> 
+<script src="js/jquery.animateNumber.min.js"></script> 
+<script src="js/main.js"></script> 
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+</body>
+</html>
