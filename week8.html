@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Week 8: DATABASE SYSTEMS CMP2060M</title>
+<title>Week 8: Mobile and Connected Devices CMP9138M</title>
 <link rel="stylesheet" href="css/reveal.css">
 <link rel="stylesheet" href="css/theme/night.css">
 
@@ -24,392 +24,376 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <div class="reveal">
   <div class="slides">
     <section data-background-transition="convex" data-background="#333333">
-      <h2 >Hello</h2>
-      <p style="color:#F8AA00">(DATABASE SYSTEMS CMP2060M)</p>
+      <h3 >Hello</h3>
+      <p style="color:#F8AA00">Mobile and Connected Devices CMP9138M</p>
     </section>
     <section data-background-transition="convex" data-background-video="assets/week7/rainingcode.mp4" data-background-video-loop="loop">
       <h3 >Wayne Christian</h3>
       <p style="color:#F8AA00">Designer, Developer, Director & Senior Lecturer</p>
     </section>
+    
+    <section data-menu-title="wayne" class="fragment" data-background="assets/week7/holo1.jpg" data-background-size="cover" data-background-color="#fff">
+      <h3 class="">Wayne Christian</h3>
+      <p>Office Location  PDW1018 (Interactive Design studio) White building, East Wing, First Floor<br>
+        Support Hours: Monday 11.30 - 1.30<br>
+        Wednesday 12.30 - 4.30</p>
+    </section>
     <section data-menu-title="intro1" data-background="#3f3f3f">
-      <p>A <strong>SQL query </strong>walks into a bar and sees two tables. <br>
-        He walks up to them and asks, "Can I join you?"</p>
+      <img src="assets/week8/joke2.jpg"/>
     </section>
     <section data-background="assets/week7/RightCloud-10.jpg" data-background-size="cover" data-background-color="#fff">
-		<h2><span class="dark-back">Standard Query Language 1 – Data Definition Language (DDL)</span></h2>
-		<p><span class="dark-back">AKA: Ess-cue-ell</span></p>
-		<p><span class="dark-back">AKA: Sequel</span></p>
+      <h4>Cloud IaaS</h4>
+      <p><span class="dark-back">(Infrastructure as a Service)</span></p>
     </section>
-    <section data-background-transition="convex" data-background="assets/week8/cow-dancing.gif" data-background-size="300px" >
-      <h3>Recap</h3>
-    </section>
-    <section data-background-transition="convex" data-background="">
-  
-      <p >Last week we</p>
-      <p class="fragment tight bullet" style="">Setup a cloud space on the <strong>Google Cloud Platform</strong></p>
-      <p class="fragment tight bullet" style="">Deployed and configured your <strong>Bitnami LAMP</strong> stack with <strong>MySQL</strong></p>
-      <p class="fragment tight bullet" style="">Enabled remote access to <strong>PHPMyAdmin</strong> -Crucial task!</p>
-      <p class="fragment tight bullet" style="">Uploaded and <strong>deployed</strong> a sample MySQL database - Adventureworks</p>
-      <p class="fragment tight bullet" style="">If you haven’t done the above please do asap – you only do it once</p>
-      <p class="fragment tight bullet" style="">You need this environment setup to do the workshop tasks and assessment work </p>
-    </section>
-    <section data-background-transition="convex" data-background="">
-      <h3>Recap</h3>
-      <p >BASIC QUERIES</p>
-    </section>
-    <section data-background-transition="convex" data-background="assets/week8/simpsons.gif" data-background-size="700px" >
-      <h3>Some of you!</h3>
-    </section>
-    <section data-background-transition="convex" data-background-video="assets/week8/sql.mp4" > </section>
-    <section data-background-transition="convex" data-background="">
-      <h3>Today</h3>
-      <p >Standard Query Language 1 – Data Definition Language (DDL)</p>
-      <p class="tight bullet" style="">MTA Databases Exam</p>
-      <p class="tight bullet" style="">Assessment 2</p>
-      <p class="tight bullet" style="">DDL</p>
-      <p class="tight bullet" style="">Create Databases</p>
-      <p class="tight bullet" style="">Create Tables</p>
-      <p class="tight bullet" style="">Data Types</p>
-      <p class="tight bullet" style="">Constraints</p>
+    <section data-menu-title="next few weeks" data-background-transition="convex" >
+      <h4>Today</h4>
+      <p class="">We will cover</p>
+      <p class="fragment bullet">Overview</p>
+      <p class="fragment bullet">Virtualisation</p>
+      <p class="fragment bullet">Cloud OS & IaaS Virtual Machines</p>
+      <p class="fragment bullet">Reading</p>
     </section>
     <section >
-      <h3>Where we are</h3>
-      <p class=" bullet">Week 7: Intro to Cloud Storage (SQL-as-a-service)</p>
-      <p class="bullet red">Week 8: Standard Query Language - Data Definition Language (create database, tables, column etc)</p>
-      <p class=" bullet">Week 9: Standard Query Language - Data Manipulation Language (insert, select, delete etc. with JOIN, UNION and other relational queries)</p>
+      <h4>The next 4 weeks!</h4>
+      <p class="small bullet">Week 7: MySQL-as-a-Service, High Availability (HA Services), Developing REST Service</p>
+      <p class="small bullet red">Week 8: Cloud Vurtualisation, Developing REST Service</p>
+      <p class="small bullet">Week 9: Pi & REST service development</p>
+      <p class="small bullet">Week 10: Module Recap, Assessment support</p>
+      <p class="small bullet">Week 11: Practical sessions + Assessment support</p>
+      <p class="small bullet">Week 12: Practical sessions + Assessment support</p>
     </section>
-    <section data-background-transition="convex" data-background="">
-      <h3>MTA – Database Fundamentals Exam</h3>
-    </section>
-    <section data-menu-title="pie" data-state="pie" data-background-transition="convex" data-background="">
-      <div id="container" style="min-width: 410px; height: 500px; max-width: 700px; margin: 0 auto"></div>
-    </section>
-    <section data-background-transition="convex" data-background="">
-      <p class="bullet" tight>See week 1 slides for MTA overview</p>
-      <p class="bullet" tight>Will shortly send out access codes to registered students for online materials for mock exam sits and training </p>
-    </section>
-    <section data-background-transition="convex" data-background="">
-      <h3>MTA – Database Fundamentals Exam</h3>
-      <p class="tight bullet small" style="">You must register your interest through the form or you cannot sit exam, or have access to mock exam sits and training system </p>
-      <p class="tight bullet" style=""> Need to know student numbers to book labs and configure exam environment</p>
-      <p class="tight bullet" style="">Will leave the register interest form open for now</p>
-      <p class="tight bullet " style="">Your engagement is important as it will influence whether or not certification will be offered to students in in the future (including your third year!)</p>
-    </section>
-    <section data-state="salary">
-      <p>Worth a whopping</p>
-      <h1 style="color: #55BF3B"> £<span id="decimals" data-number="86"></span>0</h1>
-    </section>
-    <section data-background-transition="convex" data-background="">
-      <h3>MTA – Database Fundamentals Exam</h3>
-      <p class="" style="">If you want to do exam and haven’t registered interest then you can do so below: <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=xEculd4FgkKDr19LRrFijxmaIn4T61JKtT9JeLKd65RUMlJDTzY4QzBGV1VHVFU5Q0xLNjBWWERCVC4u" target="_blank">MTA FORM </a> </p>
-    </section>
-    <section data-background-transition="convex" data-background="assets/week8/mtl.jpg" data-background-size="cover" >
-		<h3><span class="dark-back">MTA – Database Fundamentals Exam</span></h3>
-		<p class="" style=""> <span class="dark-back">Revision linked to this weeks lecture and workshop, content below available on BB under the MTA Section:</span></p>
-		<p class="tight bullet" style=""><span class="dark-back">Study Textbook Lessons 1 and 2</span></p>
-		<p class="tight bullet" style=""><span class="dark-back">Study Guide Chapters 1 and 2</span></p>
-    </section>
-    <section data-background-transition="convex" data-background="">
-      <h3>Standard Query Language (SQL)</h3>
-      <p class="bullet" tight>See week 1 slides for MTA overview</p>
-      <p class="bullet" tight>Derek will shortly send out access codes to registered students for online materials for mock exam sits and training </p>
-    </section>
-    <section data-background-transition="convex"  data-background-size="cover" >
-      <h3>Assessment 2</h3>
-      <p class="" style="">Assessment 2 will has been released today</p>
-      <p>In short: You must implement your final database solution, via an SQL script, using the MySQL database platform and associated
-        tooling. </p>
-      <p>you will develop a fully-functional SQL script file with the .sql extension. Upon execution,
-        the .sql script must create your database structure using MySQL DDL statements with all required tables and integrity
-        constraints</p>
-      <p class="small">I will spend 30 mins at the start of each workshop to go through the assessment documents via a presentation and open discussion afterwards</p>
-    </section>
-    <section data-background-transition="convex" data-background="">
-      <h3>ACRONYMS!</h3>
-    </section>
-    <section data-background-transition="convex" data-background="assets/week8/ddl.jpg" data-background-size="cover">
-		<h3><span class="dark-back">RDMS</span></h3>
-		<p class="bullet" tight><span class="dark-back">Relational Database Management System</span></p>
-		<p class="small"><span class="dark-back">in this case MYSQL</span></p>
-		<p class="small"><span class="dark-back">AKA: "My Ess Que Ell"  (not "my sequel")</span></p>
-    </section>
-    <section data-background-transition="convex" data-background="assets/week8/ddl.jpg" data-background-size="cover">
-		<h3><span class="dark-back">DDL (Data Definition Language)</span></h3>
-		<p class="bullet" tight><span class="dark-back">Create Database Schemas & Tables</span></p>
-		<p class="bullet" tight><span class="dark-back">Create data Types</span></p>
-		<p class="bullet" tight><span class="dark-back">Create Constraints</span></p>
-		<p class="bullet" tight><span class="dark-back">DROP and ALTER Commands</span></p>
-    </section>
-    <section data-background-transition="convex" data-background="assets/week8/ddl.jpg" data-background-size="cover">
-		<h3><span class="dark-back">DML (Data Manipulation Language)</span></h3>
-		<p><span class="dark-back">Basic Queries in SQL to manipulate stored data</span></p>
-		<p class="small"><span class="dark-back">You will use both DDL & DML for the workshop tasks and assessment 2<br/>
-			<strong>Focus on DDL this week</strong></span></p>
-    </section>
-    <section data-background-transition="convex" data-background="">
-      <h3>Standard Query Language (SQL)</h3>
-      <p>AKA: Ess-cue-ell or Sequel</p>
-      <p class="bullet" tight> It provides a high level declarative language interface</p>
-      <p class="bullet" tight>The user only specifies what they want the SQL result to be, leaving the RDMS to execute your query</p>
-      <p class="bullet" tight>Components: DDL & DML as previous slide </p>
-    </section>
-    <section data-background-transition="convex" data-background="">
-      <h3>declarative language interface</h3>
-      <p>"In computer science, declarative programming is a programming paradigm—a style of building the structure and elements of computer programs—that expresses the logic of a computation without describing its control flow.</p>
+    <section data-background-transition="convex" data-background-video="assets/week7/logical.mp4"> </section>
+    <section data-background="assets/week7/RightCloud-10.jpg" data-background-size="cover" data-background-color="#fff">
+      <h4>Overview</h4>
     </section>
     <section>
-      <p>Simply put - it greatly simplifies writing!</p>
-    </section>
-    <section data-background-transition="convex" data-background="assets/week8/rtcwz.jpg" data-background-size="contain">
-      <p><span style="background-color: black"> If your SQL statements are huge then you are probably doing it wrong.<br/>
-        Optimise, and optimise again</span></p>
-    </section>
-    <section data-background-transition="convex" data-background="#3f3f3f">
-      <h3>SQL DDL Statements – Create Database</h3>
-      <p class="bullet" tight>Create a schema - a new database</p>
-      <p class="bullet" tight>Schema elements can include tables, constraints</p>
-      <pre><code data-trim data-noescape>
-CREATE DATABASE databasename;
-CREATE DATABASE testdb;
-</code></pre>
-    </section>
-    <section data-background-video="https://assets.awwwards.com/awards/external/2017/08/598ed34370517.mp4">
-      <h3>DEMO Create Database</h3>
-    </section>
-    <section data-background-transition="convex" data-background="#3f3f3f">
-      <p class="small">Create a table in your database</p>
-      <pre><code data-trim data-noescape>
- CREATE TABLE table_name (
-    column1 datatype,
-    column2 datatype,
-    column3 datatype
-);
-</code></pre>
-    </section>
-    <section data-background-transition="convex" data-background="#3f3f3f">
-      <p class="small">Create a table in your database with not Null</p>
-      <pre><code data-trim data-noescape>
- CREATE TABLE table_name (
-    column1 datatype NOT NULL,
-    column2 datatype NOT NULL,
-    column3 datatype NOT NULL
-);
-
-</code></pre>
+      <p class="">Cloud Computing Service Models</p>
+      <img src="assets/week8/week8_1.png" style="width: 700px!important" width="700px"/>
+      <p class="fragment small">Who has used Cloud IaaS services before? </p>
     </section>
     <section>
-      <p>By default, a column can hold NULL values. The NOT NULL constraint enforces a column to NOT accept NULL values.<br/>
-        This enforces a field to always contain a value, which means that you cannot insert a new record, or update a record without adding a value to this field.</p>
-      <a href="https://blog.jooq.org/2014/11/11/have-you-ever-wondered-about-the-difference-between-not-null-and-default/" target="_blank">More info</a> </section>
-    <section data-background-transition="convex" data-background="#3f3f3f">
-      <p class="small">Full create table example using multiple datatypes and constraints: </p>
-      <pre><code data-trim data-noescape>
- CREATE TABLE Persons (
- PersonID int NOT NULL,
- LastName varchar(255) NOT NULL,
- FirstName varchar(255) NOT NULL,
- Address varchar(255) NOT NULL,
- City varchar(255) NOT NULL);
-
-</code></pre>
+      <p class="">Cloud Computing Service Models</p>
+      <img src="assets/week8/week8_2.png" style="width: 700px!important"/>
+      <p class="fragment small">From the diagram, what are the major differences with IaaS compared to PaaS (Platform)? </p>
     </section>
     <section>
-      <p>MySql DATA TYPES: Each column in a database table is required to have a name and a data type. You must decide what type of data that will be stored inside each column when creating a table.</p>
-      <p class="small fragment">Why?</p>
+      <h4>However………</h4>
+      <p class="fragment">Regardless of whether you are using compute through PaaS (Platform) or IaaS (Infrastructure), your cloud service will be running on a <strong>virtual machine</strong></p>
+      <p class="fragment">For PaaS, the virtual machine is abstracted away and you just manage the <strong>data</strong> and <strong>application</strong> code, hence it is called a managed service </p>
+      <p class="fragment">For IaaS, you manage the virtual machine, and with that have full access to the VM’s OS and responsibility for updates etc</p>
     </section>
     <section>
-      <p>MySQL CONSTRAINTS are used to limit the type of data that can be inserted into a table.</p>
+      <p class="">The hint here is the terminology: instance,
+        a single virtual machine is known as an instance </p>
+      <p class="">An instance can be configured, e.g. number of cpus, RAM, disk size etc</p>
+      <p class="">You <strong>should</strong> have already configured compute instances for both PaaS and IaaS using yaml configuration files </p>
     </section>
-    <section>
-      <h3>Data types</h3>
-      <p class="tight" ><strong>Numeric</strong></p>
-      <p class="bullet tight" >Integer numbers: INTEGER or INT, SMALLINT</p>
-      <p class="bullet tight" >Real numbers:	FLOAT, REAL, DOUBLE PRECISION</p>
-      <p class="tight" ><strong>Character-string</strong></p>
-      <p class="bullet tight" >Fixed-length: CHAR(n) or CHARACTER(n)</p>
-      <p class="bullet tight" >Varying length: VARCHAR(n) or CHAR VARYING(n)</p>
-      <p class="tight" ><strong>Date</strong></p>
-      <p class="bullet tight" >YYYY-MM-DD</p>
-      <p class="tight" ><strong>Time</strong></p>
-      <p class="bullet tight" >HH:MM:SS</p>
+    <section data-background="assets/week8/servers.png" data-background-size="cover" data-background-color="#fff">
+      <h4>Virtualisation</h4>
     </section>
-    <section data-menu-title="html5 common tags" data-background-iframe="https://dev.mysql.com/doc/refman/5.7/en/data-type-overview.html" data-background-interactive>
-      <p class="small tight"><a href="https://dev.mysql.com/doc/refman/5.7/en/data-type-overview.html ">More Info</a></p>
+    <section data-menu-title="intro1" data-background="#3f3f3f">
+      <img src="assets/week8/fullvirtual.png"/>
     </section>
-    <section data-menu-title="html5 common tags" data-background-iframe="https://www.w3schools.com/sql/sql_datatypes.asp" data-background-interactive>
-      <p class="small tight"><a href="https://www.w3schools.com/sql/sql_datatypes.asp">More Info</a></p>
+    <section data-menu-title="LAUGH" data-background-transition="convex" data-background-video="assets/week7/LAUGH.mp4" > </section>
+    <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Virtualisation</h4>
+      <p class="">Virtualisation has been around for some time</p>
+      <p class="bullet">In the 70s IBM pioneered hardware-level virtualisation (http://www.vm.ibm.com/vm40hist.pdf)</p>
+      <p class="bullet">The key benefit back then, as it still is now, was to run multiple operating systems on the one physical machine</p>
     </section>
-    <section>
-      <h3>MySQL CONSTRAINTS</h3>
-      <p class="tight" ><strong>NOT NULL </strong></p>
-      <p class="bullet tight" >specifies that an attribute cannot contain null values, It should be specified for all primary keys </p>
-      <p class="tight" ><strong>DEFAULT</strong></p>
-      <p class="bullet tight" >set a default value when there is no value given</p>
-      <p class="tight" ><strong>PRIMARY KEY</strong></p>
-      <p class="bullet tight" >specifies a column(s) as the table’s primary key</p>
-      <p class="tight" ><strong>UNIQUE</strong></p>
-      <p class="bullet tight" >specifies a candidate key with unique values</p>
-      <p class="tight" ><strong>FOREIGN KEY</strong></p>
-      <p class="bullet tight" >specifies column(s) as the foreign key in a <strong>referential constraint</strong></p>
+    <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Virtualisation</h4>
+      <p class="bullet">Nowadays virtualisation of servers helps to prevent under-utilisation of traditional on-premises compute and datacentre resources</p>
+      <p class="bullet">It allows rapid testing and development of specific server images</p>
+      <p class="bullet">Supports business continuity by encapsulating entire systems into single image files – e.g. Virtual Hard Disk (VHD) </p>
+      <p class="bullet">These can be restored anywhere (i.e. to cloud) </p>
     </section>
-    <section>
-      <p>In the context of relational databases, a foreign key is a field (or collection of fields) in one table that uniquely identifies a row of another table or the same table. <strong>In simpler words</strong>, the foreign key is defined in a second table, but it refers to the primary key or a unique key in the first table.</p>
+    <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>What is a Virtual Machine?</h4>
+      <p class="">“A virtual machine (VM) is an operating system OS or application environment that is installed on software which imitates dedicated hardware. The end user has the same (almost!) experience on a virtual machine as they would have on dedicated hardware.” </p>
+      <p>You have probably used one before…</p>
     </section>
-    <section data-background-transition="convex" data-background="#3f3f3f">
-      <p class="small">Full create table example using multiple datatypes and constraints: </p>
-      <pre><code data-trim data-noescape>
- CREATE TABLE Persons (
- PersonID int NOT NULL,
- LastName varchar(255) NOT NULL,
- FirstName varchar(255) NOT NULL,
- Address varchar(255) NOT NULL,
- <mark>City varchar(255) NOT NULL);</mark>
+    <section data-background="assets/week8/week8_3.png" data-background-size="contain" data-background-color=""> </section>
+    <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Virtualisation – Hardware Acceleration</h4>
+      <p class="bullet">Hardware acceleration features for VMs are now <strong>ubiquitous</strong></p>
+      <p class="bullet">Provide performance enhancements by allowing direct access to hardware</p>
+    </section>
+    <section data-background="" data-background-size="contain" data-background-color="">
+     <h4>Virtualisation – Hardware Acceleration</h4>
+      <p class="">Intel’s Virtualisation (VT-x) is built into its newer x86 CPUs:</p>
+      <p class="bullet">Provides specific x86 CPU hardware instructions to manage VMs (faster)</p>
+      <p class="bullet">Without this, all VM management is done purely through software (slower) </p>
+    </section>
+    <section data-background="" data-background-size="contain" data-background-color="">
+      <p class="">Intel’s Graphics Virtualisation Technology (GV-T)</p>
+      <p class="bullet">Recently introduced as Intel Iris Pro</p>
+      <p class="bullet">Allows the on-die GPU (Circuits on the same chip) to be dedicated to one or more VMs</p>
+      <p class="bullet">Physical machine can also have a *discrete GPU</p>
+      <p class="small fragment">*A discrete GPU is a Graphics Processing Unit that is not part of the CPU, ie, it's a separate add in board or a separate chip on the system board (usually in laptops and AIOs.) Discrete GPUs also use their own VRAM instead of using system RAM</p>
+    </section>
+    <section >
+      <div class="half">
+        <p class="small bullet" style="text-align: left">Virtualised phone emulators for Windows, Android and iOS are good examples of CPU hardware acceleration </p>
+        <p class="small bullet" style="text-align: left" >Without it they would be painfully slow (Android??) </p>
+        <p class="small bullet" style="text-align: left">Allows developers to get realistic ‘like-for-like’ performance that nearly mirrors physical device performance </p>
+      </div>
+      <div class="half"> <img  style="" src="assets/week8/week8_4.png"/> </div>
+    </section>
+    <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Virtualisation – Hardware Acceleration</h4>
+      <p >“Is the cloud just a huge collection of Virtual Machines running in rack servers?” <br>
+      </p>
+      <p class="fragment">Yes and No! </p>
+    </section>
+    <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Virtualisation Approaches</h4>
+      <p >There are two main approaches to virtualisation in x86 systems:</p>
+      <p class="bullet">Hosted architecture</p>
+      <p class="bullet">Hypervisor (bare-metal) architecture</p>
+    </section>
+    <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Hosted</h4>
+      <p class="bullet">Hosted has better compatibility across different types of hardware, it is installed on top of the host OS</p>
+      <p class="bullet">Hosted is generally directed at the individual end-user and usually comprised of low cost or ‘free’ software i.e. Virtual Box, VMware player</p>
+    </section>
+    <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Hyper V</h4>
+      <p class="bullet">Hypervisor has greater scalability, reliability, and performance, it is installed directly over the hardware and part hardware device drivers</p>
+      <p class="bullet">Hypervisor is the approach used by cloud vendors for their Cloud OS </p>
+      <p class="bullet">Hypervisor (bare-metal) architecture</p>
+    </section>
+    <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Hosted Architecture</h4>
+      <p class="bullet">Hosted virtualisation runs ‘on top’ of the host OS as a guest OS</p>
+      <p class="bullet">Guest OS is abstracted away using VM software such as Virtual Box or VMware workstation</p>
+      <p class="bullet">Type of approach you will use to install personal or small group installations of Windows on Linux and vice-versa </p>
+    </section>
+    
+    <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Hosted Architecture (limitations)</h4>
+      <p class="bullet">Does not normally have direct access to physical hardware</p>
+      <p class="bullet">Access to hardware features varies greatly between VM software vendors, and may depend on CPU hardware virtualisation features.<br>
+        For example virtual serial or USB ports (from host OS) may not be available </p>
+    </section>
+    
+    <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Virtualisation – Hosted Single User</h4>
+      <img src="assets/week8/week8_6.png"/>
+      <p class="bullet small">In cloud virtualisation this layer (red box) is commonly referred to as the hypervisor, different vendors use different types, more on this later.
+</p>
+    </section>
+    
 
-</code></pre>
+    <section data-background="assets/week8/servers.png" data-background-size="cover" data-background-color="#fff">
+      <h4>Bare-metal Virtualisation
+</h4>
     </section>
-    <section data-background-transition="convex" data-background="assets/week8/foreignkey.gif" data-background-size="cover" >
-		<h3><span class="dark-back">Demo 2: Create employee table</span></h3>
-      <p class="small">(Animation is irrelevant!)</p>
-    </section>
-    <section data-background-transition="convex" data-background="#3f3f3f">
-      <p>Create Table (with constraints)</p>
-      <p class="small">The employee table needs a foreign key that references the primary key in the department table. Need to create the department table first, with a primary key named DNUMBER</p>
-      <pre><code data-trim data-noescape>
-CREATE TABLE DEPARTMENT (
-DNUMBER INT NOT NULL, DESCRIPTION VARCHAR(30) NOT NULL,
-PRIMARY KEY (DNUMBER));
+    
+ <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Hypervisor (Bare-metal) Architecture</h4>
+    
+	 <p class="bullet small">Multiple hardware (a <strong>Server Blade</strong>, a server farm or a data center)</p>
+	 <p class="bullet small"><strong>Share hardware</strong> by dividing resources (CPUs, RAM, hard disks, network)</p>
+	 <p class="bullet small">A Virtual Machine is an isolated software container which runs its own operating system, independent of the underlying hardware, and applications <strong>behaving like they are running on a physical computer.</strong></p>
+<p class="bullet small">In the cloud, VMs reside <strong>on top of hypervisors</strong> which give direct access to the hardware for optimal performance
 
-</code></pre>
+</p>
     </section>
-    <section data-background-transition="convex" data-background="#3f3f3f">
-      <p>Alter</p>
-      <p class="small">Can then alter the employee table by adding a foreign key that references the DNUMBER primary key in the department table </p>
-      <pre><code data-trim data-noescape>
-ALTER TABLE EMPLOYEE 
-ADD CONSTRAINT fk_department_no 
-FOREIGN KEY (DNO) 
-REFERENCES DEPARTMENT (DNUMBER) 
-ON UPDATE CASCADE 
-ON DELETE CASCADE; 
-
-</code></pre>
+    
+     <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Hypervisor (Bare-metal) Architecture</h4>
+    
+		 <p class="small">The virtualisation software (Hypervisor) is installed on the bare-metal physical machine first (Server Blade),<br>
+before any guest OS</p>
+		 <p class="bullet small">Sits on top of hardware device drivers</p>
+		 <p class="bullet small">Direct access to hardware resources</p>
+		 <p class="bullet small">Each guest OS runs as a process (a VM instance)</p>
+<p class="bullet small">Scales with great performance
+</p>
     </section>
-    <section data-background-transition="convex" data-background="assets/week8/foreignkey.gif" data-background-size="cover" >
-		<h3><span class="dark-back">Demo 3: Create department table and alter employee tableM</span></h3>
-		<p class="small"><span class="dark-back">(Animation is irrelevant!)</span></p>
+    
+    <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Hypervisor (Bare-metal) Architecture</h4>
+    <br>
+		 <p class="small">Hypervisors of course used in the cloud extensively:
+		<p class="bullet ">Amazon’s Xen Hypervisor</p>
+		<p class="bullet ">Azure Hyper-V Hypervisor</p>
+		<p class="bullet ">VMware ESX Hypervisor</p>
+</p>
     </section>
-    <section data-background-transition="convex"  >
-      <h3>Constraints - Referential Triggered Actions</h3>
-      <p class="small">Attached to any foreign key constraint, this ‘action’ is fired when a referential integrity constraint is violated </p>
-      <p class="small bullet">Deletion of a referenced primary key</p>
-      <p class="small bullet">modification of a referenced primary key value</p>
-      <p class="small bullet">See diagram next</p>
+    
+      <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Hypervisor (Bare-metal) Architecture</h4>
+      <img src="assets/week8/week8_7.png"/>
+      <p class="bullet small" style="text-align: left">1:Cloud OS fabric/agent controller, manages Hypervisor</p>
+       <p class="bullet small" style="text-align: left">2:Cloud hypervisor</p>
     </section>
-    <section data-background-transition="convex" data-background="assets/week8/foreignkey_issue.jpg" data-background-size="contain" data-background-color="#ffffff" > </section>
-    <section data-background-transition="convex"  >
-      <h3>Constraints</h3>
-      <p>If I attempt to delete/drop the department table (when created with the employee table) it will trigger a Referential Triggered Action:</p>
-      <pre><code data-trim data-noescape>DROP TABLE DEPARTMENT</code></pre>
-      <img src="assets/week8/error.png"/> </section>
-    <section data-background-transition="convex"  >
-      <h3>Constraints</h3>
-      <p>Simplified - The MySQL Server rejects the delete/drop operation for the parent table if there is a related foreign key value in the referenced table. </p>
+    
+    
+    <section data-menu-title="wayne" class="fragment" data-background="assets/week8/week8_8.png" data-background-size="cover" data-background-color="#fff">
+	</section>
+   
+    <section >
+      <div class="half">
+		  <p class="small bullet" style="text-align: left"><strong>24</strong> Server ‘Blades’ in a rack</p>
+		  <p class="small bullet" style="text-align: left">Each blade holds <strong>20</strong> physical CPUs with up to 10 cores per CPU = <strong>200 CPU cores</strong> per blade</p>
+		  <p class="small bullet" style="text-align: left">A single rack can hold 24 blades: 24 x 200 = 4800 cores in a rack! Potentially <strong>4800 VMs</strong></p>
+<p class="small bullet" style="text-align: left">Modern Xeon CPUs can have as much as <strong>20 cores per CPU</strong> = <strong>9600 CPU cores per rack</strong></p>
+      </div>
+      <div class="half"> <img  style="" src="assets/week8/week8_9.png"/> </div>
     </section>
-    <section data-background-transition="convex"  >
-      <h3>Constraints</h3>
-      <p>You can specify what happens to foreign keys if the linked primary key is modified, - needs to be done during creation of the foreign key.<br/>
-        During creation use ON DELETE or ON UPDATE (for MySQL) </p>
+    <section data-background="assets/week8/mindblown.gif" data-background-size="600px" data-background-color="">
+	</section>
+    
+      <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Virtualisation Summary</h4>
+     
+		  <p class="">Virtualisation of resources primarily reduces cost</p>
+<p class="bullet">Also provides optimal performance and utilisation of resources
+	e.g. run <strong>9600</strong> VM’s (or more) on one physical rack to Maximise physical resource utilisation</p>
+		  
     </section>
-    <section data-background-transition="convex"  >
-      <h3>Constraints</h3>
-      <p>The below options can be used with ON DELETE and ON UPDATE:</p>
-      <p class="bullet">Cascade<br/>
-        on delete: is to delete all the referencing records<br/>
-        on update: is to change the value of the foreign key to the updated (new) primary key value for all referencing  records.</p>
-      <p class="bullet">Set null: the value of the foreign key becomes null </p>
+    
+     <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Virtualisation Summary</h4>
+     
+		  
+		  <p class="">Two main approaches to virtualisation:</p>
+		  <p class="bullet"><strong>Hosted</strong> architecture</p>
+		  <p class="bullet"><strong>Hypervisor</strong> (bare-metal) architecture</p>
+		  
     </section>
-    <section data-background-transition="convex" data-background="#3f3f3f">
-      <p>Alter Command – Table Constraints</p>
-      <p class="bullet small">Adding or dropping (ADD/DROP) table constraints</p>
-      <p class="bullet small">To drop foreign keys in MySQL you must use the constraint name instead of key name </p>
-      <pre><code data-trim data-noescape>
-
-ALTER TABLE EMPLOYEE 
-DROP FOREIGN KEY fk_department_no;
-ALTER TABLE EMPLOYEE 
-DROP KEY fk_department_no;
-ALTER TABLE EMPLOYEE 
-ADD CONSTRAINT fk_department_no 
-FOREIGN KEY (DNO) REFERENCES DEPARTMENT (DNUMBER) 
-ON UPDATE CASCADE ON DELETE CASCADE; 
-
-
-</code></pre>
+    
+         <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Virtualisation Summary</h4>
+     
+		<p class="">Provides businesses with optimal solutions for:</p>
+		  <p class="bullet ">Server consolidation</p>
+		  <p class="bullet ">Costs</p>
+		  <p class="bullet ">Rapid testing and Development</p>
+<p class="bullet">Business continuity
+</p>
     </section>
-    <section data-background-transition="convex" data-background="#3f3f3f">
-      <p>Alter Command – Table Columns</p>
-      <p class="bullet small">ALTER TABLE changes the definition of a table’s structure </p>
-      <p class="bullet small">Can be used for addling, dropping or setting (ADD/DROP/SET) columns </p>
-      <pre><code data-trim data-noescape>
-ALTER TABLE EMPLOYEE ADD JOB CHAR (12); 
-ALTER TABLE EMPLOYEE DROP JOB; 
-ALTER TABLE EMPLOYEE ALTER SALARY SET DEFAULT 49999; 
-</code></pre>
+    
+     <section data-background="assets/week7/RightCloud-10.jpg" data-background-size="cover" data-background-color="#fff">
+		 <h4><span class="dark-back">Cloud Operating Systems</span>
+</h4>
+      
     </section>
-    <section data-background-transition="convex" data-background="assets/week8/foreignkey.gif" data-background-size="cover" >
-		<h3><span class="dark-back">Demo 4: Alter commands for columns and constraints on employee table</span></h3>
-		<p class="small"><span class="dark-back">(Animation is irrelevant!)</span></p>
+    
+     <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Cloud Operating System - Azure</h4>
+     
+		<p class="bullet">It is important to note that a cloud platform is not just running on a cluster of virtualised Microsoft Server/Linux OS machines</p>
+<p class="bullet">Cloud providers (i.e. Amazon, Azure, Google) will have their own Cloud OS ‘agents’ that manage their infrastructure across many services (controllers)
+</p>
     </section>
-    <section data-background-transition="convex" data-background="#3f3f3f">
-      <p>Full example</p>
-      <pre><code data-trim data-noescape>
-CREATE TABLE EMPLOYEE
-(FNAME VARCHAR(15) NOT NULL,
-LNAME VARCHAR(15)	NOT NULL,
-SSN CHAR(9)	NOT NULL,
-BDATE	DATE,	
-ADDRESS VARCHAR(30),	
-GENDER	CHAR,	
-SALARY	DECIMAL(10, 2),	
-DNO INT NOT NULL,
-PRIMARY KEY(SSN),
-CONSTRAINT fk_department_no FOREIGN KEY (DNO) REFERENCES DEPARTMENT (DNUMBER) 
-ON UPDATE CASCADE ON DELETE CASCADE); 
-
-</code></pre>
+    
+      <section data-background-transition="convex" data-background-video="assets/week7/logical.mp4"> </section>
+    
+    <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Fabric Controller (FC) </h4>
+     
+		<p class="bullet">For Azure/Google it is called the Fabric Controller (FC) - where fabric is an abstraction of resources (PaaS services, VMs, etc.) that are dynamically created on demand via a Hypervisor service</p>
+		<p class="bullet">The Hypervisor is an agent/service of the FC</p>
+		<p class="bullet">All cloud compute, data, and networking resources are managed by the FC</p>
+<p class="small">For example when you deploy a VM on Azure the FC takes care of this for you and does all required configuration and deployment to the server rack.
+</p>
     </section>
-    <section data-background-transition="convex" data-background="#3f3f3f">
-      <p>DROP command – Delete Table*</p>
-      <p class="bullet small">CASCADE: All such constraints and views that  reference the table are dropped automatically from the  schema, along with the table itself </p>
-      <p class="bullet small">RESTRICT: delete that table only if it is not referenced in any constraints </p>
-      <pre><code data-trim data-noescape>DROP TABLE DEPARTMENT</code></pre>
-      <p class="small">* CASCADE and RESTRICT options not fully compatible with MySQL – used only for interoperability </p>
-    </section>
-    <section data-background-transition="convex" data-background="assets/week8/dodgy.jpg" data-background-size="cover" >
-		<h3><span class="dark-back">DROP command – Delete Schema</span></h3>
-      <p class="small"><span style="background-color: black">DROP SCHEMA: Be very careful with this statement! When its gone, its gone!</span> </p>
-    </section>
-    <section data-background-transition="convex" >
-      <h3>Next Week</h3>
-      <p >DML (Data Manipulation Language)</p>
-      <p class="small">Basic Queries in SQL to manipulate stored data </p>
-    </section>
-    <section>
-      <h3>Basic form of the SQL SELECT statement is:</h3>
-      <p> SELECT -attribute list<br/>
-        FROM -table list <br/>
-        WHERE -condition ; </p>
-      <p class="small">Remember the song at the beginning</p>
-    </section>
-       <section data-background-transition="convex" data-background="assets/week8/book.jpg" data-background-size="400px" >
-      <h3>Reading</h3>
-    </section>
+     <section data-background="" data-background-size="cover" data-background-color="#fff">
+		 <h4 style="color: black">Azure Cloud OS – Zoomed In</h4>
+		 <img src="assets/week8/week8_10.png"/>
+	</section>
+    
     <section data-background="" data-background-size="cover" data-background-color="#fff">
-      <h2>Opportunity!</h2>
-      <p>The Computer Science Society are hosting a session on SQL/databases on Tuesday (20th) at 7pm in lab 1102 (same as the workshops).
-        Focusing mainly on using SQL queries to find the data you're looking for!</p>
+		 <h4 style="color: black">Azure Cloud OS – Zoomed Out</h4>
+		 <img src="assets/week8/week8_11.png"/>
+	</section>
+    
+    <section data-background="assets/week7/RightCloud-10.jpg" data-background-size="cover" data-background-color="#fff">
+		 <h4><span class="dark-back">IaaS Virtualisation</span>
+</h4>
+      
     </section>
-       <section data-background-transition="convex" data-background-video="assets/week8/sql.mp4" > </section>
+    
+      <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>IaaS Virtualisation </h4>
+     
+		<p class="">Generally, Cloud IaaS virtualisation is of the native hypervisor (bare-metal) type in cloud server virtualisation, for scalability and performance</p>
+<p class="bullet">IaaS allows organisations to deploy fully bespoke infrastructure to reflect their resource requirements</p>
+
+		  <p class="bullet">IaaS is a staple of the DevOps toolkit</p>
+<p class="bullet">Can be managed through GUI portals or power command prompt tools such as Azure’s Powershell or Google’s Deployment Manager</p>
+
+    </section>
+     <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>IaaS Virtualisation </h4>
+		 <p>Can also facilitate hybrid cloud deployments with IaaS resources mapped onto on-premises resources:</p>
+		 <p class="bullet">For example data storage mirroring, swappable VMs</p>
+		 <p class="bullet">Virtual Networks connecting different company sites</p>
+		 <p class="bullet">Authentication from outside company network</p>
+	</section>
+   
+   <section data-background="assets/week7/RightCloud-10.jpg" data-background-size="cover" data-background-color="#fff">
+		 <h4><span class="dark-back">Cloud OS – Google Cloud Platform</span>
+</h4>
+      
+    </section>
+      <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Cloud OS – Google Cloud Platform</h4>
+		 <p>At the top level of the GCP infrastructure the Cloud OS consists of a Global Cluster Manager, which manages the below:</p>
+		  <p class="bullet">Regional Fabric Manager (specific geographic region)</p>
+		  <p class="bullet">Fabric Manager API (similar to Azure)</p>
+		  <p class="bullet">VM controllers </p>
+		  <p class="bullet">KVM Hypervisor</p>
+
+	</section>
+  
+        <section data-background="" data-background-size="contain" data-background-color="">
+      <h4>Cloud OS – Google Cloud Platform</h4>
+		 <p>Similar to Azure, when you deploy, a VM the request is handled down the service hierarchy until the hypervisor service processes the request, and deploys your VM/service to a specific region<br>
+Difficult to find further technical information – IP issues!
+</p>
+
+	</section>
+  
+   <section data-background="assets/week8/week8_12.png" data-background-size="contain" data-background-color="#fff">
+	</section>
+  
+      <section data-background="" data-background-size="cover">
+		 <h4 >Google Cloud – KVM Hypervisor</h4>
+		 <img src="assets/week8/week8_13.png"/>
+		  <p class="small">After some digging around we were able to create a draft of Google’s KVM hypervisor implementation:
+</p>
+	</section>
+   
+   
+      <section data-background="assets/week7/RightCloud-10.jpg" data-background-size="cover" data-background-color="#fff">
+		 <h4><span class="dark-back">Reading</span>
+</h4>
+      
+    </section>
+    
+        <section data-background="" data-background-size="cover">
+
+			<p >Please read first two below if you didn’t last week!</p>
+			<p class="bullet">Cloud Computing (Nayan B. Ruparelia), chapters 5 and 6 (ebook)</p>
+<p class="bullet"><a href="http://faculty.winthrop.edu/domanm/csci411/Handouts/NIST.pdf">The NIST Defintion of Cloud Computing (linked)</a>  </p>
+			<p class="bullet"><a href="https://www.sciencedirect.com/science/article/pii/S1084804513002099 ">Resource management for Infrastructure as a Service (IaaS) in cloud computing: A survey (linked)</a>
+</p>
+	</section>
+
+  
+    <section >
+	  <h4>NEXT WEEK</h4>
+	  <p>Lecture and workshop will be combined into a longer workshop session – focus will be posting data from the Pi to your service</p>
+	</section>
+   
+    <section data-background-transition="convex" data-background-video="assets/week8/headexplosion.mp4" >
+      <h4>GRAB A COFFEE THEN..</h4>
+      <p>Sensors and REST api</p>
+    </section>
   </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 

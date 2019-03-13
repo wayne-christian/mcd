@@ -4,7 +4,7 @@
 html.jobs .slide-background, html.salary .slide-background, html.start .slide-background {
 	opacity: 0.7 !important;
 }
-	span.small, p.small, h1.small{
+	.reveal span.small, .reveal p.small, .reveal h1.small{
 		    font-size: 50%;
 	
 	}
@@ -199,4 +199,13 @@ position: absolute;
 }
 .red{
 	color: crimson;
+}
+.reveal section .half img {
+	height: auto;
+    width: 100%;
+    max-width: 100%;
+}
+.reveal p {
+    line-height: normal;
+    font-size: 85%;
 }
